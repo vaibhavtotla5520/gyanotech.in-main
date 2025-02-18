@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -24,14 +24,14 @@
             $('.navbar').removeClass('sticky-top shadow-sm');
         }
     });
-    
-    
+
+
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
+
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
@@ -52,8 +52,8 @@
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -104,6 +104,18 @@
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
-    
+
 })(jQuery);
 
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const logo = document.querySelector('.navbar-brand img');
+
+    if (window.scrollY > 100) { // Adjust scroll threshold as needed
+        navbar.classList.add('sticky-top');
+        logo.src = 'img/logo-sticky-top.png'; // Change to the new logo
+    } else {
+        navbar.classList.remove('sticky-top');
+        logo.src = 'img/logo.png'; // Revert to the default logo
+    }
+});

@@ -3,13 +3,13 @@ document.write(`<!DOCTYPE html>
 
 <head>
     <meta charset="utf-8">
-    <title>Gyanotech.in</title>
+    <title>gyanotech.in</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/logo.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,8 +47,7 @@ document.write(`<!DOCTYPE html>
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="m-0"><i class="fa fa-search me-2"></i>gyanotech<span class="fs-5"> IT Solutions</span></h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                    <h1 class="m-0"><img src="img/logo.png" alt="Logo" width="75px">Gyanotech<span class="fs-5"> IT Solutions</span></h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
