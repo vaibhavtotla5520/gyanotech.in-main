@@ -8,10 +8,10 @@ document.write(`        <!-- Footer Start -->
                         <p><i class="fa fa-phone-alt me-3"></i>+91 95711 88059</p>
                         <p><i class="fa fa-envelope me-3"></i>info@gyanotech.in</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>-->
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                            <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>-->
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/gyanotech.in?igsh=MXV6ZG95ODAwdXA5eQ=="><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
