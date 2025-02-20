@@ -1,13 +1,11 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-function send_mail() {
-  require 'path/to/PHPMailer/src/Exception.php';
-  require 'path/to/PHPMailer/src/PHPMailer.php';
-  require 'path/to/PHPMailer/src/SMTP.php';
-
+function send_mail($name, $email, $subject, $message)
+{
+  require 'vendor/autoload.php';
   $mail = new PHPMailer(true);
   try {
     // Server settings
@@ -21,18 +19,80 @@ function send_mail() {
 
     // Recipients
     $mail->setFrom('info@gyanotech.in', 'info');         // Sender email and name
-    $mail->addAddress('vtotla.tech@gmail.com', 'Vaibhav Totla'); // Recipient email and name
+    $mail->addAddress($email, $name); // Recipient email and name
 
     // Content
     $mail->isHTML(true);                                        // Set email format to HTML
-    $mail->Subject = 'Test Email from cPanel SMTP';
-    $mail->Body    = 'This is a <b>test email</b> sent using cPanel SMTP and PHPMailer.';
-    $mail->AltBody = 'This is a plain text version of the email content.';
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = '';
 
     // Send the email
     $mail->send();
-      echo 'Email has been sent successfully!';
-    } catch (Exception $e) {
-      echo "Email could not be sent. Error: {$mail->ErrorInfo}";
-    }
+    $return_arr = [
+      'status' => 1,
+      'msg' => 'Email has been sent successfully!'
+    ];
+  } catch (Exception $e) {
+    $return_arr = [
+      'status' => 0,
+      'msg' => 'Email could not be sent. Error: {$mail->ErrorInfo}'
+    ];
+  }
+  return $return_arr;
+}
+
+// send_mail();
+function contact_action()
+{
+  $name = !empty($_POST["name"]) ? $_POST["name"] : "";
+  $email = !empty($_POST["email"]) ? $_POST["email"] : "";
+  $mobile = !empty($_POST["mobile"]) ? $_POST["mobile"] : "";
+  $subject = !empty($_POST["subject"]) ? "GYANOTECH.IN - " . $_POST["subject"] : "";
+  $message = !empty($_POST["message"]) ? $_POST["message"] : "";
+
+  $content = "<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+</style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Name</th>
+    <td>" . $name . "</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>" . $email . "</td>
+  </tr>
+  <tr>
+    <th>Mobile</th>
+    <td>" . $mobile . "</td>
+  </tr>
+  <tr>
+    <th>Message</th>
+    <td>" . $message . "</td>
+  </tr>
+</table>
+
+</body>
+</html>";
+  $mail_status = send_mail($name, $email, $subject, $content);
+  if ($mail_status['status'] == 1) {
+    echo json_encode(['msg' => 'success']);
+  } else {
+    echo json_encode(['msg' => 'Try After Sometime']);
+  }
 }

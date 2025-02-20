@@ -50,29 +50,35 @@
                             <h2 class="mt-2">Contact For Any Query</h2>
                         </div>
                         <div class="wow fadeInUp" data-wow-delay="0.3s">
-                            <form>
+                            <form id="contactForm">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                             <label for="name">Your Name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                             <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your Mobile">
+                                            <label for="mobile">Your Mobile</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
                                             <label for="subject">Subject</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 150px"></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
@@ -80,7 +86,7 @@
                                         <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                     </div>
                                 </div>
-                            </form>
+                            </form>                            
                         </div>
                     </div>
                 </div>
@@ -88,3 +94,89 @@
         </div>
         <!-- Contact End -->
 <script src="js/footer.js"></script>
+<script>
+$(document).ready(function() {
+    $("#contactForm").submit(function(e) {
+        e.preventDefault(); // Prevent normal form submission
+
+        // Clear previous errors
+        $(".error").remove();
+
+        // Get form values
+        let name = $("#name").val().trim();
+        let email = $("#email").val().trim();
+        let mobile = $("#mobile").val().trim();
+        let subject = $("#subject").val().trim();
+        let message = $("#message").val().trim();
+        let valid = true;
+
+        // Validation
+        if (name === "") {
+            $("#name").after('<span class="error text-danger">This field is required</span>');
+            valid = false;
+        }
+        if (email === "" || !isValidEmail(email)) {
+            $("#email").after('<span class="error text-danger">Enter a valid email</span>');
+            valid = false;
+        }
+        if (mobile === "" || !isValidMobile(mobile)) {
+            $("#mobile").after('<span class="error text-danger">Enter a valid 10-digit mobile number</span>');
+            valid = false;
+        }
+        if (subject === "") {
+            $("#subject").after('<span class="error text-danger">This field is required</span>');
+            valid = false;
+        }
+        if (message === "") {
+            $("#message").after('<span class="error text-danger">Message cannot be empty</span>');
+            valid = false;
+        }
+
+        if (!valid) return;
+
+        // AJAX Request
+        $.ajax({
+            url: "Routing.php", // Change to your PHP script
+            type: "POST",
+            data: {
+                route: "contact_action",
+                name: name,
+                email: email,
+                mobile: mobile,
+                subject: subject,
+                message: message
+            },
+            dataType: "json",
+            beforeSend: function() {
+                $("#contactForm button").text("Sending...").prop("disabled", true);
+            },
+            success: function(response) {
+                $("#contactForm button").text("Send Message").prop("disabled", false);
+
+                if (response.msg === "success") {
+                    $("#contactForm")[0].reset();
+                    alert("Message sent successfully!");
+                } else {
+                    alert("Error: " + response);
+                }
+            },
+            error: function() {
+                $("#contactForm button").text("Send Message").prop("disabled", false);
+                alert("Something went wrong. Please try again.");
+            }
+        });
+    });
+
+    // Email validation function
+    function isValidEmail(email) {
+        let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return regex.test(email);
+    }
+
+    function isValidMobile(mobile) {
+        let regex = /^[6-9]\d{9}$/; // Only allows 10-digit numbers starting with 6-9
+        return regex.test(mobile);
+    }
+});
+</script>
+
