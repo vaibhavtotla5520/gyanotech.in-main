@@ -680,14 +680,14 @@ h6,
 /* Slider content */
 .slider-content {
     display: flex;
-    width: calc(90%); /* Adjust based on the number of items */
-    animation: slide-left 10s linear infinite;
+    width: calc(400%); /* Adjust based on the number of items */
+    animation: slide-left 25s linear infinite;
 }
 
 /* Individual slider items */
 .slider-item {
     flex: 0 0 auto;
-    width: 16.66%; /* Adjust based on the number of items */
+    width: calc(100% / 20);/* Adjust based on the number of items */
     padding: 20px;
     box-sizing: border-box;
     text-align: center;

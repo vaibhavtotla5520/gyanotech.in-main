@@ -30,19 +30,19 @@
 // Growing circle
 //
 
-// scss-docs-start spinner-grow-keyframes
-@keyframes spinner-grow {
+// scss-docs-start glowing-logo-keyframes
+@keyframes glowing-logo {
   0% {
     transform: scale(0);
   }
   50% {
-    opacity: 1;
+    opacity: 999;
     transform: none;
   }
 }
-// scss-docs-end spinner-grow-keyframes
+// scss-docs-end glowing-logo-keyframes
 
-.spinner-grow {
+.glowing-logo {
   display: inline-block;
   width: $spinner-width;
   height: $spinner-height;
@@ -51,10 +51,10 @@
   // stylelint-disable-next-line property-disallowed-list
   border-radius: 50%;
   opacity: 0;
-  animation: $spinner-animation-speed linear infinite spinner-grow;
+  animation: $spinner-animation-speed linear infinite glowing-logo;
 }
 
-.spinner-grow-sm {
+.glowing-logo-sm {
   width: $spinner-width-sm;
   height: $spinner-height-sm;
 }
@@ -62,7 +62,7 @@
 @if $enable-reduced-motion {
   @media (prefers-reduced-motion: reduce) {
     .spinner-border,
-    .spinner-grow {
+    .glowing-logo {
       animation-duration: $spinner-animation-speed * 2;
     }
   }

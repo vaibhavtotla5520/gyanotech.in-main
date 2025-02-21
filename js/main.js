@@ -140,3 +140,37 @@ function showContent(contentId) {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sliderContent = document.querySelector('.slider-content');
+    const sliderItems = Array.from(sliderContent.children);
+    const sliderWidth = sliderContent.scrollWidth;
+    let animationId;
+
+    // Clone the slider items to create an infinite loop effect
+    sliderItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        sliderContent.appendChild(clone);
+    });
+
+    // Function to animate the slider
+    function animateSlider() {
+        sliderContent.style.transform = `translateX(-${sliderContent.scrollLeft}px)`;
+        sliderContent.scrollLeft += 2;
+
+        // Reset scroll position to create the loop effect
+        if (sliderContent.scrollLeft >= sliderWidth) {
+            sliderContent.scrollLeft = 0;
+        }
+
+        animationId = requestAnimationFrame(animateSlider);
+    }
+
+    // Start the animation
+    animateSlider();
+
+    // Pause animation on hover
+    sliderContent.addEventListener('mouseover', () => cancelAnimationFrame(animationId));
+    sliderContent.addEventListener('mouseout', () => animateSlider());
+});
+
