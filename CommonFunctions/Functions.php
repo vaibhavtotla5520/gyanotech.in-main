@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function send_mail($name, $email, $subject, $message)
+function send_mail($name, $subject, $message)
 {
   require 'vendor/autoload.php';
   $mail = new PHPMailer(true);
@@ -19,7 +19,10 @@ function send_mail($name, $email, $subject, $message)
 
     // Recipients
     $mail->setFrom('info@gyanotech.in', 'info');         // Sender email and name
-    $mail->addAddress($email, $name); // Recipient email and name
+    $mail->addAddress("gyanotechitsolutions@gmail.com", "Gyanotech IT Solutions"); // Recipient email and name
+    $mail->addCC('vtotla.tech@gmail.com', 'Vaibhav Totla');
+    $mail->addCC('nsvashisth2000@gmail.com', 'Nishant Vashisth');
+    $mail->addCC('vipinrwt9@gmail.com', 'Vipin Rawat');
 
     // Content
     $mail->isHTML(true);                                        // Set email format to HTML
@@ -89,7 +92,7 @@ th, td {
 
 </body>
 </html>";
-  $mail_status = send_mail($name, $email, $subject, $content);
+  $mail_status = send_mail($name, $subject, $content);
   if ($mail_status['status'] == 1) {
     echo json_encode(['msg' => 'success']);
   } else {
