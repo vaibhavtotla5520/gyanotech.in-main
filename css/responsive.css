@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+    .content-display {
+        position: static;
+        width: auto;
+        transition: none;
+    }
+    .content-display:hover {
+        background-color: none; 
+        color: none; 
+    }   
+ }
+ @media (max-width: 768px) {
+    .slider-content {
+        animation: slide-left 4s linear infinite; /* Slower animation for smaller screens */
+    }
+    .slider-item {
+        width: 50%; /* Two items visible at a time */
+        padding: 10px;
+    }
+    .slider-item img {
+        border-radius: 10px;
+    }
+}
