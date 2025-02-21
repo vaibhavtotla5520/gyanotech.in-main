@@ -523,3 +523,220 @@ h6,
     padding-right: 0;
     border-right: none;
 }
+
+/* css for show box on portfolio class */
+
+.containerbox {
+    margin-top: 2%;
+}
+
+.box {
+    position: relative;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    margin-bottom: 22px;
+    background-color: #fff;
+    border-left: 10px solid transparent;
+    color: #000000;
+    font-weight: 700;
+    text-align: justify;    /* Justifies text */
+    text-justify: inter-word;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+    z-index: 1;
+    border-left: 10px solid var(--primary);
+}
+.box span {
+    /* position: relative;
+    z-index: 1;
+    display: inline-block;
+    transition: opacity 0.3s ease; */
+    opacity: 0.5; /* Transition for opacity */
+    margin-left: 80px;
+
+
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: .5s;
+    z-index: -1;
+    /* border-left: 10px solid var(--primary) */
+}
+
+/* .box:hover::before {
+    width: 100%;
+} */
+
+.box:hover {
+    color: #fff;
+    background: var(--primary);
+}
+.box:hover span {
+    opacity: 1; /* Adjust opacity to desired level */
+}
+
+.box:nth-child(1)::before {background: var(--primary);  font-weight: 500; }
+.box:nth-child(2)::before { background: var(--primary); font-weight: 500;}
+.box:nth-child(3)::before { background: var(--primary);font-weight: 500;}
+.box:nth-child(4)::before { background: var(--primary);font-weight: 500;}
+.box:nth-child(5)::before { background: var(--primary);font-weight: 500;}
+
+.box span {
+    position: relative;
+    z-index: 1;
+}
+
+.content-display {
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    min-height: 410px;
+    background-color: #fff;
+    border-radius: 20px; /* Initial text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.content-display:hover {
+    background-color: var(--primary);
+    color: #fff;
+    transition: background-color 0.5s ease, color 0.4s ease;
+}
+.content-display:hover h3{
+    color: #fff;
+}
+.content-display:hover ul{
+    color: #fff;
+}
+
+.list ul{
+    padding-left: 2rem;
+  background-image: url(../img/Right_pointing.png);
+  background-position: 0 0;
+  background-size: 1rem 1rem;
+  background-repeat: no-repeat;
+}
+.allList {
+    text-align: right;
+    margin-top: 13px;
+}
+
+.allList a.btn {
+    position: relative;
+    display: inline-block;
+    color: var(--primary);
+    transition: color 0.5s, background-color 0.5s;
+    z-index: 1;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 35px;
+}
+
+.allList a.btn::before {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-radius: 35px;
+    background: #DDDDDD;
+    transition: width 0.5s, background-color 0.5s;
+    z-index: -1;
+}
+
+.allList a.btn:hover {
+    color: #ffffff;
+    background-color: var(--primary); /* Changes background color on hover */
+    border-radius: 35px;
+}
+
+.allList a.btn:hover::before {
+    width: 100%;
+    background: var(--primary);
+    border-radius: 35px;
+}
+
+/* css slider for technology used icon */
+
+/* Slider container */
+.slider {
+    margin-top: 40px;
+    overflow: hidden;
+    width: 100%; /* Adjust based on your design */
+    background-color: #ffffff; /* Optional: background color */
+}
+
+/* Slider content */
+.slider-content {
+    display: flex;
+    width: calc(90%); /* Adjust based on the number of items */
+    animation: slide-left 10s linear infinite;
+}
+
+/* Individual slider items */
+.slider-item {
+    flex: 0 0 auto;
+    width: 16.66%; /* Adjust based on the number of items */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-right: 10px; /* Optional: space between items */
+}
+
+.slider-item img {
+    max-width: 80%;
+    height: 80%;
+    display: block;
+    border-radius: 20px;
+}
+
+/* Animation keyframes */
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Adjust based on the number of items */
+    }
+}
+
+/* Pause animation on hover */
+.slider-content:hover {
+    animation-play-state: paused;
+}
+
+/* WhatsApp Button Styling */
+.whatsapp-btn {
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    bottom: 110px;
+    right: 45px;
+    background-color: #25d366; /* WhatsApp green color */
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e; /* Darker shade on hover */
+}

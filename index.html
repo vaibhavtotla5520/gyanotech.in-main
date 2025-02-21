@@ -177,7 +177,7 @@
                     <h2 class="mt-2">Recently Launched Projects</h2>
                 </div>
                 <p class="mb-4">At Gyanotech, we take pride in delivering exceptional results. Here’s a glimpse of our work across web development, graphic design, server administration, and more.</p>
-                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                <!-- <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="col-12 text-center">
                         <ul class="list-inline mb-5" id="portfolio-flters">
                             <li class="btn px-3 pe-4 active" data-filter="*">All</li>
@@ -185,8 +185,8 @@
                             <li class="btn px-3 pe-4" data-filter=".second">Development</li>
                         </ul>
                     </div>
-                </div>
-                <div class="row g-4 portfolio-container">
+                </div> -->
+                <!-- <div class="row g-4 portfolio-container">
                     <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
                         <div class="position-relative rounded overflow-hidden">
                             <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
@@ -258,6 +258,124 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div> -->
+                <!-- for show containers -->
+                <div >
+                    <div class="row first" data-wow-delay="0.1s">
+                        <div class="containerbox col-md-4">
+                            <div class="box" onclick="showContent('content1')"><span>ERP Systems</span></div>
+                            <div class="box" onclick="showContent('content2')"><span>Ticketing System</span></div>
+                            <div class="box" onclick="showContent('content3')"><span>CRM Dashboard</span></div>
+                            <div class="box" onclick="showContent('content4')"><span>Project Monitoring System</span></div>
+                            <div class="box" onclick="showContent('content5')"><span>E-Commerce Website</span></div>
+                        </div>
+                        <div class="col-md-8">
+                            <div id="content1" class="content-display" style="display: block;">
+                                <div>
+                                    <h3>Project</h3>
+                                    <p>Streamlining Business Operations with Custom ERP Solutions.</p>
+                                </div>
+                                <div>
+                                    <h3>Description</h3>
+                                    <p>We developed a comprehensive Enterprise Resource Planning (ERP) system tailored to meet the unique needs of businesses. This system integrates all core processes, including finance, HR, inventory, and supply chain management, into a single platform.</p>
+                                </div>
+                                <div class="list">
+                                    <h3>Key Features</h3>
+                                    <ul>Centralized Data Management: Real-time access to business data across departments.  </ul>
+                                    <ul>Automated Workflows: Reduced manual effort with automated approvals and notifications.</ul>
+                                    <ul>Custom Reporting: Generate detailed reports for better decision-making.</ul>
+                                    <ul>Scalable Architecture: Designed to grow with your business.</ul>
+                                </div>
+
+                            </div>
+                            <div id="content2" class="content-display" style="display: none;">
+                                <div>
+                                    <h3>Project</h3>
+                                    <p>Efficient Issue Resolution with a Custom Ticketing System.</p>
+                                </div>
+                                <div>
+                                    <h3>Description</h3>
+                                    <p>We built a robust ticketing system to help businesses manage customer support requests, IT issues, and internal tasks efficiently. The system ensures timely resolution and tracks the status of every ticket.</p>
+                                </div>
+                                <div class="list">
+                                    <h3>Key Features</h3>
+                                    <ul>Ticket Categorization: Organize tickets by priority, type, and department.  </ul>
+                                    <ul>Automated Assignments: Assign tickets to the right team members automatically.  </ul>
+                                    <ul>Real-Time Notifications: Keep users updated on ticket progress.</ul>
+                                    <ul>Analytics Dashboard: Monitor ticket resolution times and team performance.</ul>
+                                </div>
+                            </div>
+                            <div id="content3" class="content-display" style="display: none;">
+                                <div>
+                                    <h3>Project</h3>
+                                    <p>Enhancing Customer Relationships with a Custom CRM Dashboard.</p>
+                                </div>
+                                <div>
+                                    <h3>Description</h3>
+                                    <p>We designed and developed a Customer Relationship Management (CRM) dashboard to help businesses manage leads, track interactions, and improve customer engagement. </p>
+                                </div>
+                                <div class="list">
+                                    <h3>Key Features</h3>
+                                    <ul>Lead Management: Track and prioritize leads effectively.  </ul>
+                                    <ul>Secure Payments: Integration with PayPal, Stripe, and other gateways.</ul>
+                                    <ul>Sales Pipeline: Visualize the sales process and track progress.</ul>
+                                    <ul>Customizable Reports: Generate insights into sales performance.</ul>
+                                </div>
+                            </div>
+                            <div id="content4" class="content-display" style="display: none;">
+                                <div>
+                                    <h3>Project</h3>
+                                    <p>Real-Time Project Tracking with a Custom Monitoring System.</p>
+                                </div>
+                                <div>
+                                    <h3>Description</h3>
+                                    <p>We created a project monitoring system to help businesses track project progress, allocate resources, and meet deadlines efficiently.</p>
+                                </div>
+                                <div class="list">
+                                    <h3>Key Features</h3>
+                                    <ul>Task Management: Assign and track tasks in real-time.  </ul>
+                                    <ul>Gantt Charts: Visualize project timelines and dependencies.</ul>
+                                    <ul>Resource Allocation: Optimize resource usage across projects.</ul>
+                                    <ul>Alerts and Notifications:** Stay informed about project milestones and delays.</ul>
+                                </div>
+                            </div>
+                            <div id="content5" class="content-display" style="display: none;">
+                                <div>
+                                    <h3>Project</h3>
+                                    <p>Building Scalable E-Commerce Platforms for Seamless Shopping Experiences.</p>
+                                </div>
+                                <div>
+                                    <h3>Description</h3>
+                                    <p>We developed a fully functional e-commerce website with a user-friendly interface, secure payment gateways, and advanced search and filtering options.</p>
+                                </div>
+                                <div class="list">
+                                    <h3>Key Features</h3>
+                                    <ul>Product Catalog: Easy-to-navigate product listings.  </ul>
+                                    <ul>Secure Payments: Integration with PayPal, Stripe, and other gateways.</ul>
+                                    <ul>Order Tracking: Real-time updates on order status.</ul>
+                                    <ul>Admin Panel: Manage products, orders, and customers effortlessly.</ul>
+                                </div>
+                            </div>
+                            <div class="allList"><a class="btn px-3 mt-auto mx-auto" href="project.html">View All</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slider for Technology icons -->
+                <div class="slider">
+                    <div class="slider-content">
+                        <!-- Repeat your icon items as needed -->
+                        <div class="slider-item"><img src="./img/laravel.png" alt="Icon 1"></div>
+                        <div class="slider-item"><img src="./img/codelgniter.png" alt="Icon 1"></div>
+                        <div class="slider-item"><img src="./img/node.png" alt="Icon 2"></div>
+                        <div class="slider-item"><img src="./img/django.png" alt="Icon 3"></div>
+                        <div class="slider-item"><img src="./img/SQL.png" alt="Icon 1"></div>
+                        <!-- Duplicate items for seamless looping -->
+                        <div class="slider-item"><img src="./img/bash.webp" alt="Icon 1"></div>
+                        <div class="slider-item"><img src="./img/react.png" alt="Icon 2"></div>
+                        <div class="slider-item"><img src="./img/ubuntu_.png" alt="Icon 3"></div>
+                        <div class="slider-item"><img src="./img/angular.png" alt="Icon 3"></div>
                     </div>
                 </div>
             </div>

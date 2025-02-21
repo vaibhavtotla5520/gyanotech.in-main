@@ -119,3 +119,24 @@ window.addEventListener('scroll', function() {
         logo.src = 'img/logo.png'; // Revert to the default logo
     }
 });
+
+function showContent(contentId) {
+    // Hide all content divs
+    var contents = document.getElementsByClassName('content-display');
+    for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+        contents[i].classList.remove('active');
+    }
+    // Show the selected content
+    var activeContent = document.getElementById(contentId);
+    activeContent.style.display = 'block';
+    activeContent.classList.add('active');
+
+    // Scroll to the content on devices narrower than 768px
+    if (window.innerWidth < 768) {
+        // Scroll only if the function is triggered by a user action
+        if (window.event && window.event.type === 'click') {
+            activeContent.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
