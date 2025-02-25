@@ -20,12 +20,46 @@
     visibility: visible;
     opacity: 1;
 }
+.glowing-logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Above the loader */
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
 .back-to-top {
     position: fixed;
     display: none;
     right: 45px;
     bottom: 45px;
+    z-index: 99;
+}
+.back-to-top i {
+    position: fixed;
+    right: 60px;
+    bottom: 60px;
     z-index: 99;
 }
 
@@ -105,7 +139,7 @@ h6,
 
 .navbar-light .navbar-brand img {
     max-height: 60px;
-    transition: .5s;
+    width: auto;
 }
 
 .sticky-top.navbar-light .navbar-brand img {
@@ -135,8 +169,13 @@ h6,
     }
 
     .navbar-light .navbar-brand img {
-        max-height: 45px;
+        max-height: 24px;
     }
+
+    .cp_name {
+        font-size: 20px;
+    }
+    
 }
 
 @media (min-width: 992px) {
@@ -179,7 +218,6 @@ h6,
         color: var(--primary);
     }
 }
-
 
 /*** Hero Header ***/
 .hero-header {
@@ -387,6 +425,32 @@ h6,
 .team-item:hover h5,
 .team-item:hover small {
     color: var(--light);
+}
+.responsive-img {
+    height: 450px; /* Default height for larger screens */
+    object-fit: cover;
+    width: 100%; /* Ensures full width without distortion */
+}
+.responsive-img1 {
+    height: 450px; /* Default height for larger screens */
+    object-fit: cover;
+    width: 100%; /* Ensures full width without distortion */
+}
+.responsive-img2 {
+    height: 450px; /* Default height for larger screens */
+    object-fit: cover;
+    width: 100%; /* Ensures full width without distortion */
+}
+@media (max-width: 768px) {
+    .responsive-img {
+        height: 350px; /* Adjust height for smaller screens */
+    }
+    .responsive-img1 {
+        height: 320px; /* Adjust height for smaller screens */
+    }
+    .responsive-img2 {
+        height: 450px; /* Adjust height for smaller screens */
+    }
 }
 
 
@@ -740,3 +804,50 @@ h6,
 .whatsapp-btn:hover {
     background-color: #128c7e; /* Darker shade on hover */
 }
+
+/* Loader.. */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Image Styling */
+.glowing-logo {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Above the loader */
+}
+
+/* Container */
+.loading-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+

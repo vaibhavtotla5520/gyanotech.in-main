@@ -33,4 +33,10 @@
         position: fixed;
         right: 10px;
     }
+    .back-to-top i {
+        position: fixed;
+        right: 25px;
+        bottom: 60px;
+        z-index: 99;
+    }
 }

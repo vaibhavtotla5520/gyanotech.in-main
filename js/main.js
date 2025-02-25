@@ -108,6 +108,7 @@
 })(jQuery);
 
 window.addEventListener('scroll', function() {
+    if (window.innerWidth > 1000) {
     const navbar = document.querySelector('.navbar');
     const logo = document.querySelector('.navbar-brand img');
 
@@ -118,7 +119,18 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('sticky-top');
         logo.src = 'img/logo.png'; // Revert to the default logo
     }
+}
 });
+
+// window.onload = function updateLogoOnResize() {
+//     const logo = document.querySelector('.navbar-brand img');
+
+//     if (window.innerWidth <= 768) {
+//         logo.src = 'img/logo-sticky-top.png'; // Mobile screen logo
+//     } else {
+//         logo.src = 'img/logo.png'; // Default logo
+//     }
+// }
 
 function showContent(contentId) {
     // Hide all content divs

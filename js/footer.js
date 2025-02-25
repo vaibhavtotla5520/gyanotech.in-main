@@ -6,19 +6,19 @@ document.write(`        <!-- Footer Start -->
                         <h5 class="text-white mb-4">Get In Touch</h5>
                         <p><i class="fa fa-map-marker-alt me-3"></i>Plot 1, Vipin Garden Extension, Uttam Nagar, New Delhi</p>
                         <p><i class="fa fa-phone-alt me-3"></i>+91 95711 88059</p>
-                        <p><i class="fa fa-envelope me-3"></i>info@gyanotech.in</p>
+                        <p><i class="fa fa-envelope me-3"></i><a style="color:white;" href="contact.html">info@gyanotech.in</a></p>
                         <div class="d-flex pt-2">
                             <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>-->
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>-->
-                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/gyanotech.in?igsh=MXV6ZG95ODAwdXA5eQ=="><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/gyanotech.in"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/gyanotech-it-solution/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Popular Link</h5>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="about.html">About Us</a>
+                        <a class="btn btn-link" href="contact.html">Contact Us</a>
                         <!--<a class="btn btn-link" href="">Privacy Policy</a>
                         <a class="btn btn-link" href="">Terms & Condition</a>
                         <a class="btn btn-link" href="">Career</a>-->
@@ -66,12 +66,12 @@ document.write(`        <!-- Footer Start -->
 							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>-->
                         </div>
                         <div class="col-md-6 text-center text-md-end">
-                            <div class="footer-menu">
+                            <!-- <div class="footer-menu">
                                 <a href="">Home</a>
                                 <a href="">Cookies</a>
                                 <a href="">Help</a>
                                 <a href="">FQAs</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ document.write(`        <!-- Footer Start -->
 
         <!-- Back to Top -->
         <a href="https://wa.me/919571188059" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2 "><i class="fa fa-chevron-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
