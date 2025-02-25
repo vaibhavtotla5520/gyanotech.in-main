@@ -8,16 +8,35 @@
         background-color: none; 
         color: none; 
     }   
+    
  }
  @media (max-width: 768px) {
     .slider-content {
-        animation: slide-left 4s linear infinite; /* Slower animation for smaller screens */
+        width: calc(600%);
+        animation: slide-left 14s linear infinite; /* Adjust animation speed for smaller screens */
     }
     .slider-item {
-        width: 50%; /* Two items visible at a time */
+        width: calc(100% / 25); /* Display two items at a time */
         padding: 10px;
     }
     .slider-item img {
         border-radius: 10px;
+    }
+    .slider-content:hover {
+        animation-play-state: running;
+    }
+    .whatsapp-btn {
+        position: fixed;
+        right: 10px;
+    }
+    .back-to-top {
+        position: fixed;
+        right: 10px;
+    }
+    .back-to-top i {
+        position: fixed;
+        right: 25px;
+        bottom: 60px;
+        z-index: 99;
     }
 }

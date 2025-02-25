@@ -108,6 +108,7 @@
 })(jQuery);
 
 window.addEventListener('scroll', function() {
+    if (window.innerWidth > 1000) {
     const navbar = document.querySelector('.navbar');
     const logo = document.querySelector('.navbar-brand img');
 
@@ -118,7 +119,18 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('sticky-top');
         logo.src = 'img/logo.png'; // Revert to the default logo
     }
+}
 });
+
+// window.onload = function updateLogoOnResize() {
+//     const logo = document.querySelector('.navbar-brand img');
+
+//     if (window.innerWidth <= 768) {
+//         logo.src = 'img/logo-sticky-top.png'; // Mobile screen logo
+//     } else {
+//         logo.src = 'img/logo.png'; // Default logo
+//     }
+// }
 
 function showContent(contentId) {
     // Hide all content divs
@@ -140,3 +152,37 @@ function showContent(contentId) {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const sliderContent = document.querySelector('.slider-content');
+    const sliderItems = Array.from(sliderContent.children);
+    const sliderWidth = sliderContent.scrollWidth;
+    let animationId;
+
+    // Clone the slider items to create an infinite loop effect
+    sliderItems.forEach(item => {
+        const clone = item.cloneNode(true);
+        sliderContent.appendChild(clone);
+    });
+
+    // Function to animate the slider
+    function animateSlider() {
+        sliderContent.style.transform = `translateX(-${sliderContent.scrollLeft}px)`;
+        sliderContent.scrollLeft += 2;
+
+        // Reset scroll position to create the loop effect
+        if (sliderContent.scrollLeft >= sliderWidth) {
+            sliderContent.scrollLeft = 0;
+        }
+
+        animationId = requestAnimationFrame(animateSlider);
+    }
+
+    // Start the animation
+    animateSlider();
+
+    // Pause animation on hover
+    sliderContent.addEventListener('mouseover', () => cancelAnimationFrame(animationId));
+    sliderContent.addEventListener('mouseout', () => animateSlider());
+});
+
