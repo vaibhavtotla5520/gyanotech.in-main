@@ -4,15 +4,15 @@ document.write(`        <!-- Footer Start -->
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">Get In Touch</h5>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>Plot 1, Vipin Garden Extension, Uttam Nagar, New Delhi</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+91 95711 88059</p>
-                        <p><i class="fa fa-envelope me-3"></i><a style="color:white;" href="contact.html">info@gyanotech.in</a></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i><a style="color:white;" target="_blank" href="https://maps.app.goo.gl/brJi47GFGdCxdg7p8">Plot 1, Vipin Garden Extension, Uttam Nagar, New Delhi</p>
+                        <p><i class="fa fa-phone-alt me-3"></i><a style="color:white;" href="tel:9571188059">+91 95711 88059</a></p>
+                        <p><i class="fa fa-envelope me-3"></i><a style="color:white;" href="mailto:info@gyanotech.in">info@gyanotech.in</a></p>
                         <div class="d-flex pt-2">
                             <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>-->
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>-->
-                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/gyanotech.in"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/gyanotech-it-solution/"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/gyanotech.in" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/gyanotech-it-solution/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
@@ -27,22 +27,22 @@ document.write(`        <!-- Footer Start -->
                         <h5 class="text-white mb-4">Project Gallery</h5>
                         <div class="row g-2">
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-1.jpg" alt="Image">
+                                <img class="img-fluid" src="img/erp.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-2.jpg" alt="Image">
+                                <img class="img-fluid" src="img/monitoring.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-3.jpg" alt="Image">
+                                <img class="img-fluid" src="img/crm.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-4.jpg" alt="Image">
+                                <img class="img-fluid" src="img/automation.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-5.jpg" alt="Image">
+                                <img class="img-fluid" src="img/server.jpg" alt="Image">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src="img/portfolio-6.jpg" alt="Image">
+                                <img class="img-fluid" src="img/ticket.jpg" alt="Image">
                             </div>
                         </div>
                     </div>

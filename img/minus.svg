@@ -1,0 +1,16 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 4" width="23" height="4">
+	<title>New Project</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 32px;line-height: 5px;fill: #2124b1;font-weight: 400;font-family: "DejaVuSans", "DejaVu Sans" } 
+		.t1 { font-size: 64px;line-height: 5px;fill: #2124b1;font-weight: 400;font-family: "DejaVuSans", "DejaVu Sans" } 
+	</style>
+	<text id="_" style="transform: matrix(1.173,0,0,.512,2,-2.345)" >
+		<tspan x="0" y="0" class="t0">_</tspan><tspan  y="0" class="t1">
+</tspan>
+	</text>
+	<text id="_ copy" style="transform: matrix(1.173,0,0,.512,2,-1.345)" >
+		<tspan x="0" y="0" class="t0">_</tspan><tspan  y="0" class="t1">
+</tspan>
+	</text>
+</svg>

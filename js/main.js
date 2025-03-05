@@ -186,3 +186,48 @@ document.addEventListener("DOMContentLoaded", function() {
     sliderContent.addEventListener('mouseout', () => animateSlider());
 });
 
+const faqs = [
+  { id: 1, question: "Are your services customizable?", answer: "Yes, we provide fully customizable solutions tailored to your business needs. Whether it’s a website, software, or automation tool, we ensure it aligns with your goals and requirements." },
+  { id: 2, question: "Do you offer ongoing support and maintenance?", answer: "Absolutely! We provide 24/7 support and maintenance services to ensure your systems run smoothly. Our team is always available to address any issues or updates." },
+  { id: 3, question: "How long does it take to develop a website?", answer: "The timeline depends on the complexity of the project. A basic website can take 2-4 weeks, while a custom e-commerce platform or web application may take 6-12 weeks. We provide a detailed timeline during the planning phase." },
+  { id: 4, question: "Can you migrate my existing website to a new platform?", answer: "Yes, we offer website migration services to ensure a seamless transition to a new platform without losing data or functionality." },
+  { id: 5, question: "What is an ERP system, and how can it benefit my business?", answer: "An ERP (Enterprise Resource Planning) system integrates all core business processes (finance, HR, inventory, etc.) into a single platform. It improves efficiency, reduces costs, and provides real-time insights for better decision-making." },
+  { id: 7, question: "Do you provide ready-made CRM solutions, or are they custom-built?", answer: "We offer both! You can choose from our pre-built CRM solutions or opt for a custom-built CRM tailored to your specific needs." },
+  { id: 8, question: "Can you integrate third-party tools with my ERP/CRM system?", answer: "Yes, we specialize in integrating third-party tools like payment gateways, marketing platforms, and analytics tools with your ERP or CRM system." },
+  { id: 9, question: "What server management services do you offer?", answer: "We provide: 24/7 server monitoring, Backup and disaster recovery, Performance optimization, Cloud server management" },
+  { id: 10, question: "How do you ensure server security?", answer: "We implement advanced security measures, including firewalls, encryption, access controls, and regular security audits, to protect your servers from threats." },
+  { id: 11, question: "How do you handle project updates and communication?", answer: "We provide regular updates through emails, calls. You’ll always be in the loop!" },
+  { id: 12, question: "What if I need changes after the project is completed?", answer: "We offer post-project support and are happy to make changes or updates as needed. Additional changes may be billed separately based on the scope." },
+  { id: 13, question: "How involved do I need to be during the project?", answer: "We encourage collaboration and regular communication to ensure the project meets your expectations. However, our team handles all the technical aspects, so you can focus on your business." }
+];
+
+function displayFaqs(filteredFaqs) {
+    const faqContainer = document.getElementById("accordionExample");
+    faqContainer.innerHTML = ""; // Clear previous FAQs
+
+    filteredFaqs.forEach(faq => {
+        const faqItem = document.createElement("div");
+        faqItem.classList.add("col-lg-6", "p-2");
+        faqItem.innerHTML = `
+            <div class="accordion-item rounded-3 mb-3">
+                <h2 class="mb-0">
+                    <button class="accordion-button pe-5 bg-transparent collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse${faq.id}"
+                        aria-expanded="false"
+                        aria-controls="collapse${faq.id}">
+                        ${faq.question}
+                    </button>
+                </h2>
+                <div id="collapse${faq.id}"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body text-body">${faq.answer}</div>
+                </div>
+            </div>`;
+
+        faqContainer.appendChild(faqItem);
+    });
+}
+displayFaqs(faqs);
