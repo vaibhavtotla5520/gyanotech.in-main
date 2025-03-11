@@ -4,7 +4,7 @@ require_once "db_config.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-function send_mail($name, $subject, $message)
+function send_mail($subject, $message)
 {
   require 'vendor/autoload.php';
   $mail = new PHPMailer(true);
@@ -93,7 +93,7 @@ th, td {
 
 </body>
 </html>";
-  $mail_status = send_mail($name, $subject, $content);
+  $mail_status = send_mail($subject, $content);
   if ($mail_status['status'] == 1) {
     echo json_encode(['msg' => 'success']);
   } else {
@@ -109,6 +109,7 @@ function saveSubscribtion() {
   if (!empty($email) && !empty($source)) {
     $sql = 'INSERT INTO web_subscribers (email, source, status) VALUES ("'.$email.'", "'.$source.'", 1)';
     if ($db->conn->query($sql)) {
+        send_mail("USER SUBSCRIBED TO NEWSLETTER", "A user is added to the Newsletter subscription with email: $email");
         return "Email Added to Newsletter successfully";
         $db->conn->close();
     }
