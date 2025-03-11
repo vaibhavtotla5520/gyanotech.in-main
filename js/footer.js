@@ -50,8 +50,8 @@ document.write(`        <!-- Footer Start -->
                         <h5 class="text-white mb-4">Newsletter</h5>
                         <p>Stay updated with the latest tech trends and offers!</p>
                         <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" id="newsletter_email" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2" id="newsletter_btn"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
                         </div>
                     </div>
                 </div>
@@ -97,6 +97,15 @@ document.write(`        <!-- Footer Start -->
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMEK8DXXYQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QMEK8DXXYQ');
+    </script>
 </body>
 
 </html>`);
