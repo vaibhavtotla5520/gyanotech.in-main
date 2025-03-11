@@ -241,14 +241,15 @@ $('#newsletter_btn').on('click', function() {
         }
 
         $.ajax({
-            url: 'your-server-endpoint-url',
+            url: 'Routing.php',
             type: 'POST',
             data: {
+                route: 'newsletter_action',
                 email: email,
                 source: 'web'
             },
             success: function(response) {
-                alert(response);
+                alert("Email Added to Newsletter successfully");
                 $('#newsletter_email').val('');
             },
             error: function(xhr, status, error) {
