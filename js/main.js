@@ -231,3 +231,34 @@ function displayFaqs(filteredFaqs) {
     });
 }
 displayFaqs(faqs);
+
+$('#newsletter_btn').on('click', function() {
+        var email = $('#newsletter_email').val();
+
+        if (email === "" || !validateEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        $.ajax({
+            url: 'your-server-endpoint-url',
+            type: 'POST',
+            data: {
+                email: email,
+                source: 'web'
+            },
+            success: function(response) {
+                alert(response);
+                $('#newsletter_email').val('');
+            },
+            error: function(xhr, status, error) {
+                alert("An error occurred. Please try again later.");
+                console.error(response);
+            }
+        });
+    });
+
+    function validateEmail(email) {
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }

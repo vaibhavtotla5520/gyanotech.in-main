@@ -1,5 +1,6 @@
 <?php
 
+require_once "db_config.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -97,5 +98,21 @@ th, td {
     echo json_encode(['msg' => 'success']);
   } else {
     echo json_encode(['msg' => 'Try After Sometime']);
+  }
+}
+
+function saveSubscribtion() {
+  $db = new db;
+  $email = !empty($_POST['email']) ? $_POST['email'] : '';
+  $source = !empty($_POST['source']) ? $_POST['source'] : '';
+
+  if (!empty($email) && !empty($source)) {
+    $sql = 'INSERT INTO web_subscribers (email, source, status) VALUES ("'.$email.'", "'.$source.'", 1)';
+    if ($db->conn->query($sql)) {
+        return "Email Added to Newsletter successfully";
+        $db->conn->close();
+    }
+  } else {
+    return "Email Can Not Be Empty";
   }
 }

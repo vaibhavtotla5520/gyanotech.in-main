@@ -7,6 +7,9 @@ if (!empty($route)) {
         case "contact_action":
             contact_action();
             break;
+        case "newsletter_action":
+            saveSubscribtion();
+            break;
         default:
             echo json_encode(['msg' => 'Route Not Defined']);
     }
